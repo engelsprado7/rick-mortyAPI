@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Rick & Morty</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="assets/logo.png" alt="logo" />
+      </nav>
+      <h1>The Rick and Morty API</h1>
+    </header>
+    <main>
+      <section class="search-section">
+        <input type="text" class="search" placeholder="Buscar por personajes" />
+      </section>
+      <section class="characters-list">
+        <div id="characters"></div>
+        <template id="character-template">
+          <article>
+            <img src="" alt="" />
+            <div>
+              <h2 class="name"></h2>
+              <p><span class="status"></span></p>
+              <p><span class="species"></span></p>
+              <p><span class="gender"> </span></p>
+              <p>First seen in:<span class="origin"></span></p>
+              <p>Last known location:<span class="location"></span></p>
+            </div>
+          </article>
+        </template>
+      </section>
+    </main>
+    <script src="javascript/index.js" type="module"></script>
+  </body>
+</html>
