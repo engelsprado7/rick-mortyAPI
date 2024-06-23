@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       const characterCard = characterTemplate.cloneNode(true);
       characterCard.querySelector("img").src = character.image;
       characterCard.querySelector("h2").textContent = character.name;
+      characterCard.querySelector(".status-icon").classList.add(character.status.toLowerCase());
       characterCard.querySelector(".status").textContent = character.status;
       characterCard.querySelector(".species").textContent = character.species;
-      characterCard.querySelector(".gender").textContent = character.gender;
       characterCard.querySelector(".origin").textContent =
         character.origin.name;
       characterCard.querySelector(".location").textContent =

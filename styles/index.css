@@ -41,7 +41,83 @@ main {
 
   .characters-list {
     margin-top: 5%;
-    padding: 4rem 0px;
+    padding: 4rem 1rem;
     background: rgb(39, 43, 51);
+
+    #characters {
+      display: flex;
+      flex-flow: wrap row;
+      justify-content: center;
+      gap: 20px;
+
+      article {
+        width: 600px;
+        height: 220px;
+        display: flex;
+        overflow: hidden;
+        background: rgb(60, 62, 68);
+        border-radius: 12px;
+
+        .character-description {
+          display: flex;
+          flex-flow: nowrap column;
+          align-items: flex-start;
+          gap: 16px;
+          padding: 16px 8px;
+
+          h2,
+          p {
+            color: white;
+          }
+
+          p:has(.origin),
+          p:has(.location) {
+            display: flex;
+            flex-flow: column nowrap;
+            color: rgb(184, 184, 184);
+            font-size: 14px;
+            font-weight: bold;
+            gap: 5px;
+
+            span {
+              color: white;
+              font-weight: 500;
+              font-size: 16px;
+            }
+          }
+
+          >div {
+            display: flex;
+            flex-flow: column nowrap;
+
+            gap: 5px;
+
+            .status-icon {
+              height: 10px;
+              width: 10px;
+              border-radius: 50%;
+
+              &.alive {
+                background-color: rgb(75, 204, 75);
+              }
+
+              &.dead {
+                background-color: rgb(204, 75, 75);
+              }
+
+              &.unknown {
+                background-color: rgb(184, 184, 184);
+              }
+            }
+
+            >div {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+            }
+          }
+        }
+      }
+    }
   }
 }
