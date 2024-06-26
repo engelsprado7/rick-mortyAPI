@@ -63,6 +63,7 @@
           const location = characterCard.querySelector(".location");
           const statusIcon = characterCard.querySelector(".status-icon");
           const img = characterCard.querySelector("img");
+
           characterCard
             .querySelector(".status-icon")
             .classList.add(character.status.toLowerCase());
@@ -73,6 +74,7 @@
           origin.textContent = character.origin.name;
           location.textContent = character.location.name;
           img.src = character.image;
+          img.alt = character.name;
 
           charactersContainer.appendChild(characterCard); // Agrega el personaje al contenedor
         });
