@@ -49,9 +49,7 @@
         const characterId = urlParams.get("id");
         const api = new RickAndMortyAPI(); // Instancia de la clase RickAndMortyAPI
         const URL = `${api.baseURL}/character/${characterId}`;
-        console.log("URL", URL);
         const character = await api.getCharacters(URL); // Obtenemos el personaje con id 1
-        console.log("Character", character);
 
         // start view transition api
 
