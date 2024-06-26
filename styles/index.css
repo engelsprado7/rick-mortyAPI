@@ -4,6 +4,7 @@
   font-weight: normal;
   src: local("Montserrat Regular"),
     url("/fonts/Montserrat-Regular.woff") format("woff");
+  font-display: swap;
 }
 
 * {
@@ -38,13 +39,6 @@ main {
   a {
     text-decoration: none;
   }
-
-  .bg-rickmorty {
-    position: absolute;
-    top: 0;
-    z-index: -1;
-  }
-
   .search-section {
     display: flex;
     justify-content: center;
@@ -162,6 +156,27 @@ main {
               display: flex;
               align-items: center;
               gap: 5px;
+            }
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          flex-flow: column nowrap;
+          height: auto;
+          img {
+            width: 100%;
+          }
+
+          .character-description {
+            padding: 8px;
+
+            h2 {
+              font-size: 1.5rem;
+            }
+
+            p {
+              font-size: 1rem;
             }
           }
         }
