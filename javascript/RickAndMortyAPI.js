@@ -4,7 +4,6 @@ export class RickAndMortyAPI {
   }
 
   async getCharacters(url = `${this._baseURL}/character`) {
-    console.log("URL", this._baseURL);
     const response = await fetch(url);
     if (response.ok) {
       return response.json();

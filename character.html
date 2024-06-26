@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personaje</title>
+    <link rel="stylesheet" href="styles/character.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="assets/logo.png" alt="logo" />
+      </nav>
+    </header>
+    <main>
+      <h1>The Rick and Morty API</h1>
+      <section class="character-section">
+        <div id="character"></div>
+        <template id="character-template">
+          <article>
+            <img src="" alt="" />
+            <div class="character-description">
+              <div>
+                <h2 class="name"></h2>
+                <div>
+                  <span class="status-icon"></span>
+                  <p><span class="status"></span></p>
+                  <p>-</p>
+                  <p><span class="species"></span></p>
+                </div>
+              </div>
+
+              <p>First seen in:<span class="origin"></span></p>
+              <p>Last known location:<span class="location"></span></p>
+            </div>
+          </article>
+        </template>
+      </section>
+    </main>
+    <script type="module">
+      import { RickAndMortyAPI } from "./javascript/RickAndMortyAPI.js";
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        const charactersContainer = document.getElementById("character"); // Contenedor de personajes
+        const characterTemplate =
+          document.getElementById("character-template").content; // Plantilla de personaje
+        const characterDetails = document.querySelector(".character-section");
+        const urlParams = new URLSearchParams(window.location.search);
+        const characterId = urlParams.get("id");
+        const api = new RickAndMortyAPI(); // Instancia de la clase RickAndMortyAPI
+        const URL = `${api.baseURL}/character/${characterId}`;
+        console.log("URL", URL);
+        const character = await api.getCharacters(URL); // Obtenemos el personaje con id 1
+        console.log("Character", character);
+
+        // start view transition api
+
+        document.startViewTransition(() => {
+          const characterCard = characterTemplate.cloneNode(true);
+
+          const name = characterCard.querySelector(".name");
+          const status = characterCard.querySelector(".status");
+          const species = characterCard.querySelector(".species");
+          const origin = characterCard.querySelector(".origin");
+          const location = characterCard.querySelector(".location");
+          const statusIcon = characterCard.querySelector(".status-icon");
+          const img = characterCard.querySelector("img");
+          characterCard
+            .querySelector(".status-icon")
+            .classList.add(character.status.toLowerCase());
+
+          name.textContent = character.name;
+          status.textContent = character.status;
+          species.textContent = character.species;
+          origin.textContent = character.origin.name;
+          location.textContent = character.location.name;
+          img.src = character.image;
+
+          charactersContainer.appendChild(characterCard); // Agrega el personaje al contenedor
+        });
+      });
+    </script>
+  </body>
+</html>

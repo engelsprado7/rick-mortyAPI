@@ -7,7 +7,6 @@ export class CharacterList {
 
   setCharacters(characters) {
     this._characters = characters.map((character) => new Character(character));
-    console.log("CHARACTERS", this._characters);
   }
 
   get characters() {

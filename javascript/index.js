@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       characters.forEach((character) => {
         const characterCard = characterTemplate.cloneNode(true);
         characterCard.querySelector("img").src = character.image;
+        characterCard.querySelector(".detail-character").href = `/character.html?id=${character.id}`;
         characterCard.querySelector("h2").textContent = character.name;
         characterCard.querySelector(".status-icon").classList.add(character.status.toLowerCase());
         characterCard.querySelector(".status").textContent = character.status;
