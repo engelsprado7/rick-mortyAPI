@@ -9,7 +9,8 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   font-optical-sizing: auto;
   box-sizing: border-box;
 }
