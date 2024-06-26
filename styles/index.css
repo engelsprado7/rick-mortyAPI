@@ -72,7 +72,13 @@ main {
       cursor: pointer;
       transition: all 0.3s ease-in-out;
 
-      &:hover {
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* not hover for disabled button */
+      &:not(:disabled):hover {
         background: rgb(60, 62, 68);
       }
     }
