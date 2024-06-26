@@ -38,26 +38,41 @@ main {
     align-items: center;
 
     input {
+      width: 320px;
       border-color: rgb(184, 184, 184);
       border-radius: 12px;
       border-width: 1px;
       border-style: solid;
       font-size: 12px;
       padding: 8px;
-      transition: all 0.3s ease-in-out;
       outline: none;
-      width: 20%;
-
-      &:focus {
-        border-color: rgb(0, 0, 0);
-        width: 50%;
-      }
+      transition: all 0.3s ease-in-out;
     }
   }
 
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem;
+
+    button {
+      background: rgb(113, 113, 113);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: rgb(60, 62, 68);
+      }
+    }
+  }
   .characters-list {
     margin-top: 5%;
-    padding: 4rem 1rem;
+    padding: 0 1rem;
     background: rgb(39, 43, 51);
 
     #characters {

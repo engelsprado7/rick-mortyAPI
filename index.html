@@ -20,15 +20,15 @@
     </header>
     <main>
       <h1>The Rick and Morty API</h1>
-      <img src="assets/bg.webp" alt="bg-rick-and-morty" class="bg-rickmorty" />
       <section class="search-section">
         <input type="search" id="search" placeholder="Buscar por personajes" />
       </section>
-      <div>
-        <button id="prev">Previous</button>
-        <button id="next">Next</button>
-      </div>
+
       <section class="characters-list">
+        <div class="pagination">
+          <button id="prev"><img src="/assets/angle-left.svg" /></button>
+          <button id="next"><img src="assets/angle-right.svg" alt="" /></button>
+        </div>
         <div id="characters"></div>
         <template id="character-template">
           <article>
