@@ -3,6 +3,7 @@
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
+  box-sizing: border-box;
 }
 
 header {
@@ -13,6 +14,10 @@ header {
       object-fit: contain;
     }
   }
+}
+
+main {
+  position: relative;
 
   h1 {
     font-size: 3rem;
@@ -20,22 +25,33 @@ header {
     text-align: center;
     margin: 5% 0;
   }
-}
 
-main {
+  .bg-rickmorty {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+
   .search-section {
     display: flex;
     justify-content: center;
     align-items: center;
 
     input {
-      width: 50%;
       border-color: rgb(184, 184, 184);
       border-radius: 12px;
       border-width: 1px;
       border-style: solid;
       font-size: 12px;
       padding: 8px;
+      transition: all 0.3s ease-in-out;
+      outline: none;
+      width: 20%;
+
+      &:focus {
+        border-color: rgb(0, 0, 0);
+        width: 50%;
+      }
     }
   }
 
@@ -86,7 +102,7 @@ main {
             }
           }
 
-          >div {
+          > div {
             display: flex;
             flex-flow: column nowrap;
 
@@ -110,7 +126,7 @@ main {
               }
             }
 
-            >div {
+            > div {
               display: flex;
               align-items: center;
               gap: 5px;
@@ -119,5 +135,15 @@ main {
         }
       }
     }
+  }
+}
+
+@keyframes slidein {
+  0% {
+    width: 20%;
+  }
+
+  100% {
+    width: 50%;
   }
 }

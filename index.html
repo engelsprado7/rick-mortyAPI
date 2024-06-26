@@ -17,12 +17,17 @@
       <nav>
         <img src="assets/logo.png" alt="logo" />
       </nav>
-      <h1>The Rick and Morty API</h1>
     </header>
     <main>
+      <h1>The Rick and Morty API</h1>
+      <img src="assets/bg.webp" alt="bg-rick-and-morty" class="bg-rickmorty" />
       <section class="search-section">
-        <input type="text" class="search" placeholder="Buscar por personajes" />
+        <input type="search" id="search" placeholder="Buscar por personajes" />
       </section>
+      <div>
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+      </div>
       <section class="characters-list">
         <div id="characters"></div>
         <template id="character-template">

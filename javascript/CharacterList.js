@@ -13,4 +13,10 @@ export class CharacterList {
   get characters() {
     return this._characters;
   }
+
+  filterByName(query) {
+    return this._characters.filter(character =>
+      character.name.toLowerCase().includes(query.toLowerCase())
+    );
+  }
 }

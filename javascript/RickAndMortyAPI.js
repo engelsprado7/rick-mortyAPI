@@ -3,13 +3,17 @@ export class RickAndMortyAPI {
     this._baseURL = "https://rickandmortyapi.com/api";
   }
 
-  async getCharacters() {
+  async getCharacters(url = `${this._baseURL}/character`) {
     console.log("URL", this._baseURL);
-    const response = await fetch(`${this._baseURL}/character`);
+    const response = await fetch(url);
     if (response.ok) {
       return response.json();
     } else {
       throw new Error("Error fetching characters... Sorry!");
     }
+  }
+
+  get baseURL() {
+    return this._baseURL;
   }
 }
