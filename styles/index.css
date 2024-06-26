@@ -101,7 +101,11 @@ main {
         overflow: hidden;
         background: rgb(60, 62, 68);
         border-radius: 12px;
-
+        img {
+          width: 220px;
+          height: 220px;
+          object-fit: cover;
+        }
         .character-description {
           display: flex;
           flex-flow: nowrap column;
